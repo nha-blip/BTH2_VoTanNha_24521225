@@ -95,6 +95,7 @@ namespace Project
                 }
                 day++;
             }
+            Console.WriteLine();
         }
         // Hàm nhập
         public void Input()

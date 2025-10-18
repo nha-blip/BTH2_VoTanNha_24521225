@@ -23,7 +23,7 @@ namespace Project
                 {
                     foreach (FileInfo str2 in str)            // In danh sách file
                     {
-                        Console.WriteLine($"{str2.CreationTime}\t\t\t{str2.Name}{str2.Extension}");
+                        Console.WriteLine($"{str2.CreationTime}\t\t{str2.Name}{str2.Extension}");
                     }
                 }
                 else

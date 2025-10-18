@@ -12,17 +12,19 @@ namespace Project
         int[,] matrix;  //Ma trận 2 chiều 
         public Matrix()     //Contructor
         {
-            m=0; n = 0;
-            matrix = new int[0,0];
+            m = 0; n = 0;
+            matrix = new int[0, 0];
         }
         public void Input()   //hàm nhập ma trận
         {
             Console.WriteLine("Nhập số hàng của ma trận");
-            while (!int.TryParse(Console.ReadLine(), out m)){
+            while (!int.TryParse(Console.ReadLine(), out m) || m<1)
+            {
                 Console.WriteLine("Số hàng không hợp lệ, hãy nhập lại");
             }
             Console.WriteLine("Nhập số cột của ma trận");
-            while (!int.TryParse(Console.ReadLine(), out n)){
+            while (!int.TryParse(Console.ReadLine(), out n) || n<1)
+            {
                 Console.WriteLine("Số cột không hợp lệ, hãy nhập lại");
             }
             matrix = new int[m, n];
@@ -31,7 +33,7 @@ namespace Project
             {
                 for (int j = 0; j < n; j++)
                 {
-                    while (!int.TryParse(Console.ReadLine(), out matrix[i,j]))
+                    while (!int.TryParse(Console.ReadLine(), out matrix[i, j]))
                     {
                         Console.Write("Phần tử không hợp lệ, hãy nhập lại");
                     }
@@ -45,7 +47,7 @@ namespace Project
             {
                 for (int j = 0; j < n; j++)
                 {
-                   Console.Write(matrix[i,j]+" ");
+                    Console.Write(matrix[i, j] + " ");
                 }
                 Console.WriteLine();
             }
@@ -54,7 +56,7 @@ namespace Project
         {
             int x;
             Console.WriteLine("Nhập phần tử cần tìm kiếm");
-            while(!int.TryParse(Console.ReadLine(),out x))
+            while (!int.TryParse(Console.ReadLine(), out x))
             {
                 Console.WriteLine("Nhập sai định dạng, hãy nhập lại");
             }
@@ -65,13 +67,13 @@ namespace Project
                 {
                     if (matrix[i, j] == x)
                     {
-                        Console.WriteLine($"Vị trí của {x} trong mảng là {i}, {j}");
+                        Console.WriteLine($"Vị trí của {x} trong mảng là dòng {i+1}, cột {j+1}");
                         found = true;
                     }
-                        
+
                 }
             }
-            if(!found)
+            if (!found)
                 Console.WriteLine($"Không tìm thấy phần tử {x} trong ma trận");
         }
         public bool isPrime(int x) // Hàm kiểm tra số nguyên tố
@@ -86,6 +88,7 @@ namespace Project
         }
         public void OutputPrimes() // Hàm xuất các phần tử là số nguyên tố
         {
+            bool flag = true;
             Console.WriteLine("Các phần tử là số nguyên tố trong ma trận:");
             for (int i = 0; i < m; i++)
             {
@@ -93,11 +96,13 @@ namespace Project
                 {
                     if (isPrime(matrix[i, j]))
                     {
+                        flag = false;
                         Console.Write(matrix[i, j] + " ");
                     }
                 }
             }
-            Console.WriteLine();
+            if(flag) Console.WriteLine("Không có số nguyên tố trong ma trận");
+            else Console.WriteLine();
         }
         public void RowWithMostPrimes() // Hàm cho biết dòng nào có nhiều số nguyên tố nhất
         {
@@ -119,9 +124,10 @@ namespace Project
                     rowIndex = i;
                 }
             }
+            Console.WriteLine("Dòng chứa nhiều số nguyên tố nhất:");
             if (rowIndex != -1)
             {
-                Console.WriteLine($"Dòng {rowIndex} có nhiều số nguyên tố nhất với {maxCount} số nguyên tố.");
+                Console.WriteLine($"Dòng {rowIndex+1} có nhiều số nguyên tố nhất với {maxCount} số nguyên tố.");
             }
             else
             {
@@ -130,47 +136,13 @@ namespace Project
         }
         public static void Run()
         {
-            Matrix matrix=new Matrix();
-            Console.WriteLine("-------Chương trình xử lý ma trận-------\n" +                              
-                              "Nhấn 0 để Thoát\n" +
-                              "Nhấn 1 để nhập ma trận\n" +
-                              "Nhấn 2 để xuất ma trận\n" +
-                              "Nhấn 3 để tìm kiếm một phần tử trong ma trận\n" +
-                              "Nhấn 4 để xuất các phần tử là số nguyên tố\n" +
-                              "Nhấn 5 để biết dòng nào chứa nhiều số nguyên tố nhất\n"+
-                              "Mời bạn chọn chức năng");
-            int choice;
-            do
-            {
-                while (!int.TryParse(Console.ReadLine(), out choice))
-                {
-                    Console.WriteLine("Bạn nhập sai định dạng, hãy nhập lại");
-                }
-                switch (choice)
-                {
-                    case 0:
-                        Console.WriteLine("Bạn đã thoát chương trình");
-                        break;
-                    case 1:
-                        matrix.Input();
-                        break;
-                    case 2:
-                        matrix.Output();
-                        break;
-                    case 3:
-                        matrix.Search();
-                        break;
-                    case 4:
-                        matrix.OutputPrimes();
-                        break;
-                    case 5:
-                        matrix.RowWithMostPrimes();
-                        break;
-                    default:
-                        Console.WriteLine("Chức năng không hợp lệ, hãy chọn lại");
-                        break;
-                }
-            } while (choice != 0);
+            Matrix matrix = new Matrix();
+            Console.WriteLine("-------Chương trình xử lý ma trận-------");
+            matrix.Input();
+            matrix.Output();
+            matrix.Search();
+            matrix.OutputPrimes();
+            matrix.RowWithMostPrimes();
         }
     }
 }

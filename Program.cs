@@ -40,6 +40,9 @@ namespace Project
                     case 5:
                         QuanLyDanhSach.Run();
                         break;
+                    default:
+                        Console.WriteLine("Không có chức năng bạn vừa chọn");
+                        break;
                 }
             } while (choice != 0);
             

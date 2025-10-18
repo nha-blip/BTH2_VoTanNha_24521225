@@ -88,8 +88,8 @@ namespace Project
     }
     public class Arr : PhanSo
     {
-        protected int n;
-        protected PhanSo[] arr;
+        private int n;
+        private PhanSo[] arr;
 
         public Arr()
         {

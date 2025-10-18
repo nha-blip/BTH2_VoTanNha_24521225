@@ -5,7 +5,7 @@ namespace Project
     public class Date
     {
         // thuộc tính tháng, năm
-        protected int month, year;
+        private int month, year;
         // contructor
         public Date(int m = 1, int y = 2025)
         {

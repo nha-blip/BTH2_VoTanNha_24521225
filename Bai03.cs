@@ -8,8 +8,8 @@ namespace Project
 {
     class Matrix
     {
-        int m, n;   // Số hàng và cột
-        int[,] matrix;  //Ma trận 2 chiều 
+        private int m, n;   // Số hàng và cột
+        private int[,] matrix;  //Ma trận 2 chiều 
         public Matrix()     //Contructor
         {
             m = 0; n = 0;

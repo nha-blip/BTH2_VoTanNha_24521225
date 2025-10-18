@@ -1,2 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Project.KhuDat">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAEAIAAIAAAAAQAAAAAAAAAAAAABAAAAAAAACAAgA=</HashCode>
+      <FileName>Bai05.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.NhaPho">
+    <Position X="8.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAEAEAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bai05.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.ChungCu">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Bai05.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.QuanLyDanhSach">
+    <Position X="10.5" Y="0.75" Width="2.5" />
+    <AssociationLine Name="NhaPho" Type="Project.NhaPho" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.5" Y="3.422" />
+        <Point X="10.312" Y="3.422" />
+        <Point X="10.312" Y="2.608" />
+        <Point X="9.229" Y="2.608" />
+        <Point X="9.229" Y="3" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.857" Y="0.527" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAkAAAAAIAAAJAAAAAAAAAAABAAAAAAAAQAAAwCAI=</HashCode>
+      <FileName>Bai05.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="KhuDat" />
+      <Property Name="ChungCu" />
+      <Property Name="NhaPho" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

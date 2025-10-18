@@ -48,8 +48,9 @@ namespace Project
     }
     class NhaPho : KhuDat
     {
-        protected int NamXayDung;
-        protected int SoTang;
+        /// <summary></summary>
+        private int NamXayDung;
+        private int SoTang;
         public NhaPho(string diaDiem = "", double dienTich = 0, int giaTien = 0, int namXayDung = 0, int soTang = 0)
             : base(diaDiem, dienTich, giaTien)
         {
@@ -83,7 +84,7 @@ namespace Project
     }
     public class ChungCu : KhuDat
     {
-        protected int Tang;
+        private int Tang;
         public ChungCu(string diaDiem = "", double dienTich = 0, int giaTien = 0, int tang = 0)
             : base(diaDiem, dienTich, giaTien)
         {
@@ -117,6 +118,31 @@ namespace Project
             cc = new List<ChungCu>();
             np = new List<NhaPho>();
         }
+
+        public KhuDat KhuDat
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public ChungCu ChungCu
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public NhaPho NhaPho
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void NhapDanhSach()
         {
             Console.Write("Nhập số lượng khu đất: ");

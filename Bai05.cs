@@ -118,31 +118,6 @@ namespace Project
             cc = new List<ChungCu>();
             np = new List<NhaPho>();
         }
-
-        public KhuDat KhuDat
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public ChungCu ChungCu
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public NhaPho NhaPho
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public void NhapDanhSach()
         {
             Console.Write("Nhập số lượng khu đất: ");
